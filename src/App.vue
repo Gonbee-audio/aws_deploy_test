@@ -1,21 +1,23 @@
 <template>
   <div id="app">
-    <p>vue.jsの学習</p>
+    <h1>VUE.JSのアプリケーション</h1>
     <img src="./assets/logo.png">
     <div>
-      <router-link to="/">ホーム画面</router-link>
-      <router-link to="/pagenation">ページ遷移</router-link>
+      <router-link to="/" class="btn btn-outline-primary">ホーム画面</router-link>
+      <router-link to="/pagenation" class="btn btn-outline-secondary">送信画面</router-link>
     </div>
     <router-view></router-view>
-    <p>vuexで表示したデータを表示します。</p>
-    <p>{{ this.$store.state.text }}</p>
+    <p>入力したデータを表示します。</p>
+    <p>{{ sendText }}</p>
   </div>
 </template>
 
 <script>
+/* eslint-disable */
 export default {
+  name: "App",
   computed: {
-    text() {
+    sendText() {
     return this.$store.state.text
     }
   }

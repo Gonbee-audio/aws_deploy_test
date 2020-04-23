@@ -1,41 +1,42 @@
+/* eslint-disable */
 import Vue from 'vue'
 import Vuex from 'vuex'
 
 Vue.use(Vuex);
 
 export default new Vuex.Store({
-    state: {
-    text: '',
-    password: '',
+  state: {
+    text: [],
+    password: [],
     checkbox: false,
     radio: false,
     },
     mutations:{
-        setText(state,str){
-            state.text = str.text
+        setText(state,strText){
+            state.text = strText;
         },
-        setPassword(state,str){
-            state.password = str.password
+        setPassword(state,strPassword){
+            state.password = strPassword;
         },
-        setCheckbox(state,boolean){
-            state.cheakbox = boolean.checkbox
+        setCheckbox(state,booleanCheckbox){
+            state.cheakbox = booleanCheckbox;
         },
-        setRadio(state,boolean){
-            state.radio = boolean.radio
+        setRadio(state,booleanRadio){
+            state.radio = booleanRadio;
         }
     },
     actions:{
-            setText(context, str){
-                context.commit('setText')
+            setText(context, text){
+                context.commit('setText');
             },
-            setPassword(context, str){
-                context.commit('setPassword')
+            setPassword(context, password){
+                context.commit('setPassword');
             },
-            setCheckbox(context, boolean){
-                context.commit('setCheckbox')
+            setCheckbox(context, cheakbox){
+                context.commit('setCheckbox');
             },
-            setRadio(context, boolean){
-                context.commit('setRadio')
+            setRadio(context, setradio){
+                context.commit('setRadio');
 
         }
     },
