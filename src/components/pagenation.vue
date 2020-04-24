@@ -2,10 +2,10 @@
 <div>
 <form @submit.prevent="updatefunc" action="/">
   <p>プログラミング勉強しています</p>
-  <p>テキスト<input type="text" :value="textdefault" class="textForm"></p>
-  <p>パスワード<input type="password" :value="password" ></p>
-  <p>チェックボックス<input type="checkbox" :value="checkbox" ></p>
-  <p>ラジオボタン<input type="radio" :value="radio" ></p><br>
+  <p>テキスト<input type="text" v-model="form.textdefault" name="text" class="textForm"></p>
+  <p>パスワード<input type="password" v-model="form.password" name="password"></p>
+  <p>チェックボックス<input type="checkbox" v-model="form.checkboxdefault" ></p>
+  <p>ラジオボタン<input type="radio" v-model="form.radiodefault" ></p><br>
   <p><input type="hidden" value="隠し情報" ></p>
   <p><input type="submit" value="送信"></p>
 </form>
@@ -27,8 +27,10 @@ export default{
   },
   methods: {
       updatefunc (event) {
-         console.log(this.$store.dispatch("setText", event.target.value)),
-         event.target.value = ''
+         this.$store.dispatch("setText", event.target.text = this.form.textdefault),
+         this.$store.dispatch("setPassword", event.target.password = this.form.textdefault)
+
+
       }
   }
 }
