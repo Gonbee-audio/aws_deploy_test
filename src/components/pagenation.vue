@@ -1,17 +1,14 @@
 <template>
 <div>
-<form @submit="updatefunc">
+<form @submit.prevent="updatefunc" action="/">
   <p>プログラミング勉強しています</p>
-  <p>テキスト<input type="text" :value="text" ></p>
-  <p>パスワード<input type="password" value="password" v-model="form.password"></p>
-  <p>チェックボックス<input type="checkbox" value="checkbox" v-model="form.checkboxdefault"></p>
-  <p>ラジオボタン<input type="radio" value="radio" v-model="form.radiodefault"></p><br>
-  <input type="hidden" value="隠し情報">
-  <input type="submit" value="送信" >
+  <p>テキスト<input type="text" :value="textdefault" class="textForm"></p>
+  <p>パスワード<input type="password" :value="password" ></p>
+  <p>チェックボックス<input type="checkbox" :value="checkbox" ></p>
+  <p>ラジオボタン<input type="radio" :value="radio" ></p><br>
+  <p><input type="hidden" value="隠し情報" ></p>
+  <p><input type="submit" value="送信"></p>
 </form>
-{{ form.password }}
-{{ form.checkboxdefault }}
-{{ form.radiodefault }}
 </div>
 </template>
 
@@ -30,7 +27,7 @@ export default{
   },
   methods: {
       updatefunc (event) {
-         this.$store.dispatch("setText", event.target.value),
+         console.log(this.$store.dispatch("setText", event.target.value)),
          event.target.value = ''
       }
   }

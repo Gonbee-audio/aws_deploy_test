@@ -12,31 +12,31 @@ export default new Vuex.Store({
     radio: false,
     },
     mutations:{
-        setText(state,strText){
+        setText(state, strText){
             state.text = strText;
         },
-        setPassword(state,strPassword){
+        setPassword(state, strPassword){
             state.password = strPassword;
         },
-        setCheckbox(state,booleanCheckbox){
+        setCheckbox(state, booleanCheckbox){
             state.cheakbox = booleanCheckbox;
         },
-        setRadio(state,booleanRadio){
+        setRadio(state, booleanRadio){
             state.radio = booleanRadio;
         }
     },
     actions:{
-            setText(context, text){
-                context.commit('setText');
+            setText(context, strText){
+                context.commit('setText', strText);
             },
-            setPassword(context, password){
-                context.commit('setPassword');
+            setPassword(context, strPassword){
+                context.commit('setPassword', strPassword);
             },
-            setCheckbox(context, cheakbox){
-                context.commit('setCheckbox');
+            setCheckbox(context, booleanCheckbox){
+                context.commit('setCheckbox', booleanCheckbox);
             },
-            setRadio(context, setradio){
-                context.commit('setRadio');
+            setRadio(context, booleanRadio){
+                context.commit('setRadio', booleanRadio);
 
         }
     },

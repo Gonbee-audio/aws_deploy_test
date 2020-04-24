@@ -19,6 +19,9 @@ export default {
   computed: {
     sendText() {
     return this.$store.state.text
+    },
+    sendPassword() {
+      
     }
   }
 }
