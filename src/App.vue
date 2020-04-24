@@ -1,6 +1,6 @@
 <template>
-  <div id="app">
-    <h1>VUE.JSのアプリケーション</h1>
+  <div id="app" class="container">
+    <h1>VUE.JSのアプリケーションspa開発練習</h1>
     <img src="./assets/logo.png">
     <div>
       <router-link to="/" class="btn btn-outline-primary">ホーム画面</router-link>
@@ -8,7 +8,7 @@
     </div>
     <router-view></router-view>
     <p>入力したデータを表示します。</p>
-    <p>{{ sendText }}</p>
+    <p><span class="alert alert-primary" role="alert">  テキスト:{{ sendText }}</span></p>
   </div>
 </template>
 
@@ -20,9 +20,6 @@ export default {
     sendText() {
     return this.$store.state.text
     },
-    sendPassword() {
-      
-    }
   }
 }
 </script>

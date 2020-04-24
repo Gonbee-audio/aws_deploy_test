@@ -2,8 +2,10 @@
 <div>
 <form @submit.prevent="updatefunc" action="/">
   <p>プログラミング勉強しています</p>
-  <p>テキスト<input type="text" v-model="form.textdefault" name="text" class="textForm"></p>
-  <p>パスワード<input type="password" v-model="form.password" name="password"></p>
+  <label for="exampleInputEmail1">メッセージ</label>
+  <p><input type="text" v-model="form.textdefault" name="text" class="textForm"></p>
+  <label for="exampleInputPassword1">パスワード</label>
+  <p><input type="password" v-model="form.password" name="password"></p>
   <p>チェックボックス<input type="checkbox" v-model="form.checkboxdefault" ></p>
   <p>ラジオボタン<input type="radio" v-model="form.radiodefault" ></p><br>
   <p><input type="hidden" value="隠し情報" ></p>
